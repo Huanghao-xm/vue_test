@@ -15,10 +15,23 @@
     }
 -->
 <div id="app">
+  <p v-text="msg"></p>
+  <button v-on:click="handleClick">倒序</button>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+    el:'#app',
+    data:{
+      msg:'上海自来水'
+    },
+    methods:{
+      handleClick () {
+        this.msg = this.msg.split('').reverse().join('')
+      }
+    }
+  })
 </script>
 </body>
 </html>

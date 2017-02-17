@@ -19,10 +19,31 @@
     事件处理函数: methods
 -->
 <div id="app">
+    <input type="text" @keyup.enter="enter" v-model="input"/>
+    <ul>
+        <li v-for="a in arr" track-by="$index" >{{a}}<button @click="del($index)">X</button></li>
+    </ul>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+    el:'#app',
+    data: {
+        input:null,
+        arr: ['A','B','C']
+    },
+    methods:{
+        enter () {
+            this.arr.push(this.input)
+            this.input = null
+        },
+
+        del(index) {
+            this.arr.splice(index, 1)
+        }
+    }
+  })
 </script>
 </body>
 </html>

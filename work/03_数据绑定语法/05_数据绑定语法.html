@@ -26,12 +26,42 @@
       @keyup.enter='xxx'
 -->
 <div id="app">
+<p>{{msg}}</p>
+  <p>{{{msg}}}</p>
+  <p>{{msg.toUpperCase()}}</p>
+  <hr/>
+  <a href="url">百度</a>当字符串解析
+  <a href="{{url}}">百度</a>当JS解析
+
+  <a v-bind:href="url">百度</a>
+  <a :href="url">百度</a>
+  <hr/>
 
 
+  <input type="text" v-on:keyup.enter="test1">
+  <br/>
+  <hr/>
+  <input type="text" @keyup.enter="test2('aaa',$event)">
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+    el:'#app',
+    data:{
+      msg:'<a href="www.baidu.com">百度</a>',
+      url:'http://www.baidu.com'
+    },
+    methods:{
+      test1(event) {
+        alert('test1()' + event.target.value)
+      },
+      test2(data, event) {
+        alert(data + '----' + event.target.value)
+      }
+    }
+
+  })
 </script>
 </body>
 </html>

@@ -15,11 +15,47 @@
 3. 延迟指定时间才更新: debounce='1000'
 -->
 <div id="demo">
-
+  <p >Message is:{{msg}}</p>
+  <input type="text" v-model="msg">
+  <hr/>
+  <textarea v-model="msg"></textarea>
+  <br/>
+  <hr/>
+  <input type="checkbox" id='checkbox' v-model="isOk">
+  <label for="checkbox">{{isOk}}</label>
+  <hr/>
+  <input type="checkbox" id='Jack' v-model="names">
+  <label for="Jack">Jack </label>
+  <input type="checkbox" id="Bob" v-model="names">
+  <label for="Bob">Bob </label>
+  <input type="checkbox" id="Tom" v-model="names">
+  <label for="Tom">Tom </label>
+  <p>Checked names:</p>
+  <hr/>
+  <input type="radio" id="female" v-model="">
+  <label for="female">Male</label>
+  <input type="radio" id="male" v-model="">
+  <label for="male">Female</label>
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+      el : '#demo',
+      data : {
+        msg:'atguigu',
+        isOk:true,
+
+
+      },
+      methods : {
+      
+      },
+      
+      computed : {
+          
+      }
+  });
 </script>
 </body>
 </html>

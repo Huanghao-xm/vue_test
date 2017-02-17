@@ -7,26 +7,47 @@
 <body>
 <!--
 切换一个元素:
-  v-if
+  v-if   操作的是标签，删除或者添加
   v-else
-  v-show
+  v-show  操作的是display属性，但是标签还在，只是隐藏
 切换多个元素
-  <template v-if="ok">  //不能用v-show
+  <template v-if="ok">  //不能用v-show 不会产生多余的节点
 注意:
   如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好
 -->
 
 <div id="demo">
   <h1>测试: 切换一个元素</h1>
-
+   <p v-show="isOk">atguigu</p>
+  <p v-if="isOk">成功了</p>
+  <p v-else>失败了</p>
 
   <h1>测试: 切换多个元素</h1>
+  <template v-if="isOk">
+    <p>aaaaaaaa</p>
+    <p>aaaaaaaa</p>
+    <p>aaaaaaaa</p>
+  </template>
+
 
 
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+      el : '#demo',
+      data : {
+        isOk: true
+      },
+      methods : {
+
+      },
+
+      computed : {
+
+      }
+  });
 </script>
 </body>
 </html>
